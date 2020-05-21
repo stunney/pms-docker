@@ -6,12 +6,13 @@ services:
     restart: unless-stopped
     environment:
       - TZ
-      - PLEX_CLAIM
-      - PLEX_CONFIG=./volume/config
-      - PLEX_TRANSCODE=./volume/transcode
-      - PLEX_DATA=./volume/data
+      - CLAIM_TOKEN
+      - PLEX_CONFIG
+      - PLEX_TRANSCODE
+      - PLEX_DATA
     network_mode: host
     volumes:
       - ${PLEX_CONFIG}:/config
       - ${PLEX_TRANSCODE}:/transcode
-      - ${PLEX_DATA}/data:/data
+      - ${PLEX_DATA}:/data
+
